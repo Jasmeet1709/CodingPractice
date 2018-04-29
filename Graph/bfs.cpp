@@ -2,12 +2,9 @@
 #include <queue>
 using namespace std;
 
-void print(int** edges,int n,int sv){
+void print(int** edges,int n,int sv, bool* visited){
 	queue<int> q ;
-	bool* visited = new bool[n];
-	for(int i=0;i<n;i++){
-		visited[i] = false;
-	}
+	
 	q.push(sv); 
 	
 	visited[sv] = true;
@@ -25,6 +22,20 @@ void print(int** edges,int n,int sv){
 			}
 		}		
 	}
+	
+}
+
+void BFS(int** edges,int n){
+	bool* visited = new bool[n];
+	for(int i=0;i<n;i++){
+		visited[i] = false;
+	}
+
+	for(int i=0;i<n;i++){
+		if(!visited[i])
+			print(edges,n,i,visited);
+	}
+
 	delete[] visited;
 }
 
@@ -57,7 +68,7 @@ int main(){
 	}
 
 	
-	print(edges,n,0);
+	BFS(edges,n);
 	destroyTwoDimenArrayOnHeapUsingDelete(edges,n,n);
 	
 	return 0;

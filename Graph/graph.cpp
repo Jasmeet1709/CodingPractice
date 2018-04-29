@@ -1,3 +1,4 @@
+// DFS
 #include<iostream>
 using namespace std;
 
@@ -17,7 +18,19 @@ void print(int** edges,int n,int sv,bool* visited){
 
 	}
 }
+void DFS(int** edges,int n){
+	bool* visited = new bool[n];
+	for(int i=0;i<n;i++){
+		visited[i] = false;
+	}
 
+	for(int i=0;i<n;i++){
+		if(!visited[i])
+			print(edges,n,i,visited);
+	}
+
+	delete[] visited;
+}
 void destroyTwoDimenArrayOnHeapUsingDelete(int ** ptr, int row, int col)
 {
 	for(int i = 0; i < row; i++)
@@ -46,12 +59,9 @@ int main(){
 		edges[s][f] = 1;
 	}
 
-	bool* visited = new bool[n];
-	for(int i=0;i<n;i++){
-		visited[i] = false;
-	}
-	print(edges,n,0,visited);
+	DFS(edges,n);
+
 	destroyTwoDimenArrayOnHeapUsingDelete(edges,n,n);
-	delete[] visited;
+
 	return 0;
 }

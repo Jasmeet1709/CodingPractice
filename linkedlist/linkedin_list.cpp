@@ -23,14 +23,16 @@ public:
     void print();
 };
 
-LinkedList::LinkedList(){
+LinkedList::LinkedList()
+{
     this->length = 0;
     this->head = NULL;
 }
 
-LinkedList::~LinkedList(){
+LinkedList::~LinkedList()
+  {
     std::cout << "LIST DELETED";
-}
+    }
 
 void LinkedList::add(int data){
     Node* node = new Node();
@@ -40,7 +42,7 @@ void LinkedList::add(int data){
     this->length++;
 }
 
-void LinkedList::print(){
+void LinkedList:print(){
     Node* head = this->head;
     int i = 1;
     while(head){

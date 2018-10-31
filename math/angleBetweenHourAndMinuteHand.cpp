@@ -7,7 +7,7 @@ int calcAngle(double h, double m)
     if (h <0 || m < 0 || h >12 || m > 60)
         printf("Wrong input");
  
-    if (h == 12) h = 0;
+    if (h == 12)h = 0
     if (m == 60) m = 0;
  
     
@@ -19,10 +19,12 @@ int calcAngle(double h, double m)
  
     return angle;
 }
-int main() {
+int main()
+ {
 	int t;
 	cin>>t;
-	while(t--){
+	while(t--)
+          {
 	    double h,m;
 	    cin>>h>>m;
 	    cout<<calcAngle(h,m)<<endl;

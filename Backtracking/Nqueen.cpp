@@ -1,4 +1,4 @@
-// NQueen
+//Problem Statement: You have given a interger N which is the size of NxN chess board and now you need to find all the arrangements in which we can fill N queens on it.
 #include <iostream>
 using namespace std;
 
